@@ -48,27 +48,27 @@ In the following steps you will build and run a Docker container called agility2
    
 #. Clone the github repository to the Docker container (we use different components of the repository inside the container) and build a system using the existing Ansible playbook
 
-   - git clone https://github.com/ajgerace/azure-f5
-   - Create environment variables utilizing the student ID and password provided by the instructor
-   - export AZURE_USERNAME=x-student#@f5custlabs.onmicrosoft.com  **insert the correct values in the username**
-   - export AZURE_PW=ChangeMeNow123
-   - Run bash script to create the Azure Service Principal and Secret
-   - ch azure-f5
-   - ./spCreate.sh
-   - Output will look something like.....
+    - git clone https://github.com/ajgerace/azure-f5
+    - Create environment variables utilizing the student ID and password provided by the instructor
+    - export AZURE_USERNAME=x-student#@f5custlabs.onmicrosoft.com  **insert the correct values in the username**
+    - export AZURE_PW=ChangeMeNow123
+    - Run bash script to create the Azure Service Principal and Secret
+    - cd azure-f5
+    - ./spCreate.sh
+    - Output will look something like.....
 
    |image201|
 
 #. **Troubleshooting tip**---If all the values do not populate, the service principal was not created correctly or already exists. If this happens, access the Azure portal to delete the Service Principal for your student ID
 	 
-   - Login to Azure Portal
-   - https://portal.azure.com
-   - USERNAME: x-student#@f5custlabs.onmicrosoft.com
-   - Password: ChangeMeNow123
-   - Click on Azure Active Directory
-   - Click App registration
-   - Click on your app  (studentX-app)
-   - Click delete
+    - Login to Azure Portal
+    - https://portal.azure.com
+    - USERNAME: x-student#@f5custlabs.onmicrosoft.com
+    - Password: ChangeMeNow123
+    - Click on Azure Active Directory
+    - Click App registration
+    - Click on your app  (studentX-app)
+    - Click delete
 
 #. Create the group_vars/all/vault.yml file with the variables in the black section and verify the contents
 
