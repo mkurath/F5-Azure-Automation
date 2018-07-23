@@ -161,10 +161,10 @@ Verify that you can connect to the application through the BIG-IP
 Inspect the Ansible Playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   -Return to the Terminal window
+   - Return to the Terminal window
    - Prompt is now /home/ansible
    - **If you closed the terminal window, restart the ansible container**
-    -sudo docker ps -a (this will allow you to see the CONTAINER ID)
+    - sudo docker ps -a (this will allow you to see the CONTAINER ID)
     - sudo docker exec -it <CONTAINER ID> /bin/sh
    - View the variable assignments in the group_vars/azure-f5.yml
    - cat group_vars/azure-f5.yml
