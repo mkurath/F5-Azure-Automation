@@ -35,7 +35,7 @@ In the following steps you will build and run a Docker container called agility2
     - ls 
     - Change directory to the azure-f5
     - cd azure-f5
-#. Build Docker container (hint: note the period at the end of the command.  
+ #. Build Docker container (hint: note the period at the end of the command.  
 
     - sudo docker build -t agility2018 . **(A space is required after the period for this command to work)**
     - **This step will take about 10 minutes**
@@ -46,7 +46,7 @@ In the following steps you will build and run a Docker container called agility2
     - Note the change at the prompt. You are now working inside the Docker container
     - Prompt is now /home/ansible
    
-#. Clone the github repository to the Docker container (we use different components of the repository inside the container) and build a system using the existing Ansible playbook
+ #. Clone the github repository to the Docker container (we use different components of the repository inside the container) and build a system using the existing Ansible playbook
 
     - git clone https://github.com/ajgerace/azure-f5
     - Create environment variables utilizing the student ID and password provided by the instructor
@@ -59,7 +59,7 @@ In the following steps you will build and run a Docker container called agility2
 
    |image201|
 
-#. **Troubleshooting tip**---If all the values do not populate, the service principal was not created correctly or already exists. If this happens, access the Azure portal to delete the Service Principal for your student ID
+ #. **Troubleshooting tip**---If all the values do not populate, the service principal was not created correctly or already exists. If this happens, access the Azure portal to delete the Service Principal for your student ID
 	 
     - Login to Azure Portal
     - https://portal.azure.com
@@ -70,7 +70,7 @@ In the following steps you will build and run a Docker container called agility2
     - Click on your app  (studentX-app)
     - Click delete
 
-#. Create the group_vars/all/vault.yml file with the variables in the black section and verify the contents
+ #. Create the group_vars/all/vault.yml file with the variables in the black section and verify the contents
 
     - vi group_vars/all/vault.yml 
     - Paste the azure variables created in step 5 in and save the file
@@ -79,7 +79,7 @@ In the following steps you will build and run a Docker container called agility2
     - <esc>:wq
     - cat group_vars/all/vault.yml
 
-#. Create the vault password file. This file will hold the vault password so that you will not have to input the password on the command line or be prompted for the password when running the playbook.
+ #. Create the vault password file. This file will hold the vault password so that you will not have to input the password on the command line or be prompted for the password when running the playbook.
 
     - echo "@g!l!+y2018" > .vault-pass.txt
     - Encrypt the vault.yml file
@@ -88,9 +88,9 @@ In the following steps you will build and run a Docker container called agility2
     - cat group_vars/all/vault.yml
     - View the contents of the encrypted vault.yml file 
     - ansible-vault view group_vars/all/vault.yml
-#. View the contents of group_vars/azure-f5.yml. Note the prefix variable and the various IP addresses. This is the variable input file to the ansible playbook. 
+ #. View the contents of group_vars/azure-f5.yml. Note the prefix variable and the various IP addresses. This is the variable input file to the ansible playbook. 
 
-#. Run Ansible playbook with deploy_state=present to create deployment
+ #. Run Ansible playbook with deploy_state=present to create deployment
 
     - ansible-playbook f5agility.yml -e deploy_state=present
     - **This step will take about 20 minutes**
