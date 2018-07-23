@@ -73,31 +73,31 @@ In the following steps you will build and run a Docker container called agility2
 
 #. Create the group_vars/all/vault.yml file with the variables in the black section and verify the contents
 
-   - vi group_vars/all/vault.yml 
-   - Paste the azure variables created in step 5 in and save the file
-   - Delete the empty line between azure_tenant_id ad azure_user
-   - Save - Write access the Azure portal to delete the Service Principal for your student IDthe vault.yml file
-   - <esc>:wq
-   - cat group_vars/all/vault.yml
+    - vi group_vars/all/vault.yml 
+    - Paste the azure variables created in step 5 in and save the file
+    - Delete the empty line between azure_tenant_id ad azure_user
+    - Save - Write access the Azure portal to delete the Service Principal for your student IDthe vault.yml file
+    - <esc>:wq
+    - cat group_vars/all/vault.yml
 
 #. Create the vault password file. This file will hold the vault password so that you will not have to input the password on the command line or be prompted for the password when running the playbook.
 
-   - echo "@g!l!+y2018" > .vault-pass.txt
-   - Encrypt the vault.yml file
-   - ansible-vault encrypt group_vars/all/vault.yml
-   - View the encrypted vault.yml file 
-   - cat group_vars/all/vault.yml
-   - View the contents of the encrypted vault.yml file 
-   - ansible-vault view group_vars/all/vault.yml
+    - echo "@g!l!+y2018" > .vault-pass.txt
+    - Encrypt the vault.yml file
+    - ansible-vault encrypt group_vars/all/vault.yml
+    - View the encrypted vault.yml file 
+    - cat group_vars/all/vault.yml
+    - View the contents of the encrypted vault.yml file 
+    - ansible-vault view group_vars/all/vault.yml
 #. View the contents of group_vars/azure-f5.yml. Note the prefix variable and the various IP addresses. This is the variable input file to the ansible playbook. 
 
 #. Run Ansible playbook with deploy_state=present to create deployment
 
-   - ansible-playbook f5agility.yml -e deploy_state=present
-   - **This step will take about 20 minutes**
-   - Once complete review the comments on the screen. 
-    - Note the URI for BIG-IP management
-    - Note the URI for the VIP which was created
+    - ansible-playbook f5agility.yml -e deploy_state=present
+    - **This step will take about 20 minutes**
+    - Once complete review the comments on the screen. 
+     - Note the URI for BIG-IP management
+     - Note the URI for the VIP which was created
    |image202|
 
 Inspect the objects created in the Azure environment
