@@ -18,12 +18,11 @@ Accessing Ravello Jump Host and deploy BIG-IP
 
 #. When prompted for credentials
 
-   - Username: Ubuntu
-
-   - Password: supernetops
-   - Open the chrome browser
-   - Adjust the font size using the Zoom In
-   - Size the window
+    - Username: Ubuntu
+    - Password: supernetops
+    - Open the chrome browser
+    - Adjust the font size using the Zoom In
+    - Size the window
    
 Build and run a docker container with ansible playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,21 +30,21 @@ In the following steps you will build and run a Docker container called agility2
 
 #. Clone the github repository to the Linux Host
 
-   - git clone https://github.com/ajgerace/azure-f5 
-   - View the contents of the directory. Note the addition of a subdirectory called 
-   - ls 
-   - Change directory to the azure-f5
-   - cd azure-f5
+    - git clone https://github.com/ajgerace/azure-f5 
+    - View the contents of the directory. Note the addition of a subdirectory called 
+    - ls 
+    - Change directory to the azure-f5
+    - cd azure-f5
 #. Build Docker container (hint: note the period at the end of the command.  
 
-   - sudo docker build -t agility2018 . **(A space is required after the period for this command to work)**
-   - **This step will take about 10 minutes**
-   - Verify that the agility2018 container exists and look at the other docker containers currently on the system
-   - sudo docker images
-   - Run the Docker container
-   - sudo docker run -it --rm agility2018
-   - Note the change at the prompt. You are now working inside the Docker container
-   - Prompt is now /home/ansible
+    - sudo docker build -t agility2018 . **(A space is required after the period for this command to work)**
+    - **This step will take about 10 minutes**
+    - Verify that the agility2018 container exists and look at the other docker containers currently on the system
+    - sudo docker images
+    - Run the Docker container
+    - sudo docker run -it --rm agility2018
+    - Note the change at the prompt. You are now working inside the Docker container
+    - Prompt is now /home/ansible
    
 #. Clone the github repository to the Docker container (we use different components of the repository inside the container) and build a system using the existing Ansible playbook
 
