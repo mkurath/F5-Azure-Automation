@@ -182,12 +182,12 @@ Add a VIP to the existing Application environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #. In the following steps we will use Ansible to add a Public to Private IP mapping and create an additional VIP on the BIG-IP
 
-   - Return to the Terminal window
-   - Navigate to  /home/ansible/azure-f5
-   - To add secondary IP to the Azure environment you will run another playbook
-   - ansible-playbook -i notahost, f5agility_add_ip.yml -e deploy_state=present
-   - To create second vip on the existing BIG-IP you will run another playbook
-   - ansible-playbook -i notahost, f5agility_create_vs2.yml -e deploy_state=present
+    - Return to the Terminal window
+    - Navigate to  /home/ansible/azure-f5
+    - To add secondary IP to the Azure environment you will run another playbook
+    - ansible-playbook -i notahost, f5agility_add_ip.yml -e deploy_state=present
+    - To create second vip on the existing BIG-IP you will run another playbook
+    - ansible-playbook -i notahost, f5agility_create_vs2.yml -e deploy_state=present
    
 #. Let’s take a look at the Ansible Playbooks used to create the objects (Public IP in Azure and a VIP on the BIG_IP) 
 
@@ -202,21 +202,21 @@ Add a VIP to the existing Application environment
     - roles/create_vs2/tasks/main.yml
 #. Let’s take a look at the configuration changes on ther BIG-IP and the Azure environmet
 
-   - Access BIG-IP Management interface
-    - Username: x-student#
-    - Password: ChangeMeNow123
-   - Local Traffic>>Virtual Servers>>Virtual Server List
-   - Note that bodgedit_vs2 is present. IP address 10.0.10.247
-   - Access the Azure portal
-   - https://portal.azure.com 
-    - Username: x-student#@f5custlabs.onmicrosoft.com
-    - Password: ChangeMeNow123
-   -Inspect the external network interface in Azure
-   - Resource Groups
-   - Select your Resource Group  <x-student#_rg>
-   - Inspect the BIG-IP virtual machine Network Interface object
-   - x-student#-ext
-   - IP Configurations from the tool list on the left of the screen
+    - Access BIG-IP Management interface
+     - Username: x-student#
+     - Password: ChangeMeNow123
+    - Local Traffic>>Virtual Servers>>Virtual Server List
+    - Note that bodgedit_vs2 is present. IP address 10.0.10.247
+    - Access the Azure portal
+    - https://portal.azure.com 
+     - Username: x-student#@f5custlabs.onmicrosoft.com
+     - Password: ChangeMeNow123
+    -Inspect the external network interface in Azure
+     - Resource Groups
+     - Select your Resource Group  <x-student#_rg>
+     - Inspect the BIG-IP virtual machine Network Interface object
+     - x-student#-ext
+     - IP Configurations from the tool list on the left of the screen
 	Note the Public IP associated with 10.0.10.247
 
 Test the newly created VIP
