@@ -16,7 +16,7 @@ Log on to the Ravello jumphost using the FQDN assigned by the instructor. All wo
 Accessing Ravello Jump Host and deploy BIG-IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. When prompted for credentials
+ #. When prompted for credentials
 
     - Username: Ubuntu
     - Password: supernetops
