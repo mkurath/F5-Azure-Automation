@@ -296,7 +296,7 @@ In this section we will add a new application to the existing BIG-IP.  Since we 
  #. Access the BIG-IP management GUI
 
     - https://<Public-IP-of -Management)
-   - Us ername: azureuser
+    - Us ername: azureuser
     - Password: ChangeMeNow123
     
  #. Create another Virtual Server using  the Azure_Ubuntu_Pool  (this is done to skip the redundancy of building another pool)
