@@ -133,7 +133,7 @@ Install Apache Web Server on the Linux Server in Azure
     - Select your Resource Group
     - Identify the Object with the Ubuntu Public IP address
 
-   |image109|
+    |image109|
 
  #. SSH to the Apache Server 
 
@@ -157,7 +157,7 @@ Use the Azure portal to gather IP information about the systems you have built
     - Select  "Ip configurations in the left panel
     - Note the IP-Address <10.0.3.5> (this is the address which will be used as the pool member on the BIG-IP config)
 
-   |image110|
+    |image110|
 
  #. Access the Azure Portal to find the public IP address assigned to the F5 management interface.
  
@@ -166,7 +166,7 @@ Use the Azure portal to gather IP information about the systems you have built
     - Identify the Object with the BIG-IP Management Interface x-student#-mgmt
     - Note Public IP mapped to the management interface
 
-   |image111|
+    |image111|
 
  #. Access the Azure Portal to find the NAT IP address assigned to the external F5 interface. 
 
@@ -178,7 +178,7 @@ Use the Azure portal to gather IP information about the systems you have built
     - Note External Self IP mapped to 10.0.2.4
     - Note External Self IP mapped to 10.0.2.10 (this will be used to configure the VIP on the BIG-IP)
 
-   |image112|
+    |image112|
 
 Review the BIG IP config objects created by the template and build a VIP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -203,44 +203,44 @@ Review the BIG IP config objects created by the template and build a VIP
     - Local Traffic>>Pools
     - Create Button in upper right corner
 
-   +------------------------+----------------------------------------+
-   | Name                   | Azure_Ubuntu_Pool                      |
-   +------------------------+----------------------------------------+
-   | Health Monitors        | http                                   |
-   +------------------------+----------------------------------------+
-   | Address                | 10.0.3.5  <VIP Info from Azure Portal> |
-   +------------------------+----------------------------------------+
-   | Service Port           | http                                   |
-   +------------------------+----------------------------------------+
+    +------------------------+----------------------------------------+
+    | Name                   | Azure_Ubuntu_Pool                      |
+    +------------------------+----------------------------------------+
+    | Health Monitors        | http                                   |
+    +------------------------+----------------------------------------+
+    | Address                | 10.0.3.5  <VIP Info from Azure Portal> |
+    +------------------------+----------------------------------------+
+    | Service Port           | http                                   |
+    +------------------------+----------------------------------------+
    
    - Click the "Add" button
    - Click the "Finished" button
 
 
-   |image113|
+    |image113|
    
  #. Create a Virtual Server using the Azure_Ubuntu_Pool
 
     - Local Traffic>>Virtual Servers
     - Create Button in upper right corner
 
-   +---------------------------------------------+---------------------------------------+
-   | Name                                        | Azure_Ubuntu_VIP                      |
-   +---------------------------------------------+---------------------------------------+
-   | Destination Address/Mask                    | 10.0.2.10 <IP Info From Azure Portal> |
-   +---------------------------------------------+---------------------------------------+
-   | Service Port                                | http                                  |
-   +---------------------------------------------+---------------------------------------+
-   | HTTP Profile                                | http                                  |
-   +---------------------------------------------+---------------------------------------+
-   |Source Address Translation                   | auto map                              |
-   +---------------------------------------------+---------------------------------------+
-   | Default Pool                                | Azure_Ubuntu_pool                     |
-   +---------------------------------------------+---------------------------------------+
+    +---------------------------------------------+---------------------------------------+
+    | Name                                        | Azure_Ubuntu_VIP                      |
+    +---------------------------------------------+---------------------------------------+
+    | Destination Address/Mask                    | 10.0.2.10 <IP Info From Azure Portal> |
+    +---------------------------------------------+---------------------------------------+
+    | Service Port                                | http                                  |
+    +---------------------------------------------+---------------------------------------+
+    | HTTP Profile                                | http                                  |
+    +---------------------------------------------+---------------------------------------+
+    |Source Address Translation                   | auto map                              |
+    +---------------------------------------------+---------------------------------------+
+    | Default Pool                                | Azure_Ubuntu_pool                     |
+    +---------------------------------------------+---------------------------------------+
 
     - Click the "Finished" button
 
-   |image114|
+    |image114|
 
 Add an ACL in the Azure portal to permit HTTP traffic to the VIP and test connectivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,7 +255,8 @@ Add an ACL in the Azure portal to permit HTTP traffic to the VIP and test connec
     - Destination Port Ranges	 80
     - Name			        Port_80
     - Press the Add button at the bottom of the window
-   |image115|
+    
+    |image115|
    
  #. Verify that you can connect to the Application
 
@@ -274,7 +275,7 @@ In this section we will add a new application to the existing BIG-IP.  Since we 
     - IP configurations
     - Note that we currently have 4 IP addresses on the 10.0.2.0 segment
 
-   |image116|
+    |image116|
    
  #. Add a Public IP to Private IP NAT to the external interface in Azure
     - Select +ADD at the top of the GUI
@@ -290,7 +291,7 @@ In this section we will add a new application to the existing BIG-IP.  Since we 
      - OK (bottom right)
      - OK (bottom left)
 
-   |image117|
+    |image117|
 
  #. Access the BIG-IP management GUI
 
@@ -303,19 +304,19 @@ In this section we will add a new application to the existing BIG-IP.  Since we 
     - Create Button in upper right corner
  
 
-   +---------------------------------------------+---------------------------------------+
-   | Name                                        | ADD_Azure_Ubuntu_VIP                  |
-   +---------------------------------------------+---------------------------------------+
-   | Destination Address/Mask                    | 10.0.2.20 <IP Info From Azure Portal> |
-   +---------------------------------------------+---------------------------------------+
-   | Service Port                                | http                                  |
-   +---------------------------------------------+---------------------------------------+
-   | HTTP Profile                                | http                                  |
-   +---------------------------------------------+---------------------------------------+
-   |Source Address Translation                   | auto map                              |
-   +---------------------------------------------+---------------------------------------+
-   | Default Pool                                | Azure_Ubuntu_pool                     |
-   +---------------------------------------------+---------------------------------------+
+    +---------------------------------------------+---------------------------------------+
+    | Name                                        | ADD_Azure_Ubuntu_VIP                  |
+    +---------------------------------------------+---------------------------------------+
+    | Destination Address/Mask                    | 10.0.2.20 <IP Info From Azure Portal> |
+    +---------------------------------------------+---------------------------------------+
+    | Service Port                                | http                                  |
+    +---------------------------------------------+---------------------------------------+
+    | HTTP Profile                                | http                                  |
+    +---------------------------------------------+---------------------------------------+
+    |Source Address Translation                   | auto map                              |
+    +---------------------------------------------+---------------------------------------+
+    | Default Pool                                | Azure_Ubuntu_pool                     |
+    +---------------------------------------------+---------------------------------------+
 
     - Finished Button
 
@@ -332,7 +333,7 @@ Access the Azure portal to delete the objects you created in this lab
     - Right Click on the Resource group and select Delete Resource Group
     - Follow the prompts to complete the process
 
-   |image118|
+    |image118|
 
 
 
