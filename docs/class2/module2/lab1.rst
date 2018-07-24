@@ -1,5 +1,4 @@
-
-    
+ 
 Lab 2.1: Introduction to F5 Orchestration with Ansible 
 ======================================================
 
@@ -28,7 +27,7 @@ Build and run a docker container with ansible playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In the following steps you will build and run a Docker container called agility2018 which will have Ansible installed. From the Docker container, you will provide the required configuration and authentication credentials to deploy an application into the Azure environment in a fully automated way. 
 
-#. Clone the github repository to the Linux Host
+ #. Clone the github repository to the Linux Host
 
     - git clone https://github.com/ajgerace/azure-f5 
     - View the contents of the directory. Note the addition of a subdirectory called 
@@ -113,8 +112,8 @@ Let’s take a look at what was built by the process in Azure. This section will
    - Inspect the BIG-IP virtual machine object
     - f5vm01
    - Inspect the object which contains the BIG-IP management address
-    -x-student#-mgmt-pip
-   - Note the Public IP Address    
+    - x-student#-mgmt-pip
+    - Note the Public IP Address    
     - x-student#-mgmt-nsg
     - Notice that 443 and 22 are permitted
     - Notice that only one source IP address is allowed to connect. The allowed IP address is the IP of the Ravello Jump Host used to build the environment    
@@ -154,7 +153,8 @@ Inspect the BIG-IP Configuration
 Verify that you can connect to the application through the BIG-IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Access the application
+ #. Access the application
+
    -http://<Public-IP mapped to the VIP address> (from the ansible output or look at the management interface in the Azure portal)
 
 
