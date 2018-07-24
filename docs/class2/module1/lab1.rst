@@ -1,4 +1,4 @@
-    
+     
 Lab 1.1: Deploy a BYOL BIG-IP in Azure with 3 NIC’s
 ===================================================
 
@@ -26,7 +26,7 @@ Accessing Ravello Jump Host and deploy BIG-IP
     - Scroll down to the List of F5 ARM templates for Azure deployments to the section titled Deploying the BIG-IP VE in Azure 
     - 3 NICs  
     - Click PAYG Deploy to Azure
-   |image101|
+    |image101|
 
  #. You will be redirected to portal.azure.com
 
@@ -36,34 +36,36 @@ Accessing Ravello Jump Host and deploy BIG-IP
 
  #. Complete the Customized template with the following values **(don’t follow the screen shot)**
 
-   +------------------------+---------------------+
-   | Resource Group         | Select Create New   |
-   +------------------------+---------------------+
-   | Resource Group         | x-student#-rg       |
-   +------------------------+---------------------+
-   | Location               | East US             |
-   +------------------------+---------------------+
-   | Admin Username         | azureuser           |
-   +------------------------+---------------------+
-   | Admin Password         | ChangeMeNow123      |
-   +------------------------+---------------------+
-   | DNS Label              | x-student#BIGIP     |
-   +------------------------+---------------------+
-   | Licensed Bandwidth     | 25M                 |
-   +------------------------+---------------------+
-   | Number of External IPs | 3                   |                      
-   +------------------------+---------------------+
-   |Timezone                | UTC                 |
-   +------------------------+---------------------+ 
+    +------------------------+---------------------+
+    | Resource Group         | Select Create New   |
+    +------------------------+---------------------+
+    | Resource Group         | x-student#-rg       |
+    +------------------------+---------------------+
+    | Location               | East US             |
+    +------------------------+---------------------+
+    | Admin Username         | azureuser           |
+    +------------------------+---------------------+
+    | Admin Password         | ChangeMeNow123      |
+    +------------------------+---------------------+
+    | DNS Label              | x-student#BIGIP     |
+    +------------------------+---------------------+
+    | Licensed Bandwidth     | 25M                 |
+    +------------------------+---------------------+
+    | Number of External IPs | 3                   |                      
+    +------------------------+---------------------+
+    |Timezone                | UTC                 |
+    +------------------------+---------------------+ 
  
  #. Check the “I Agree” box in front of the terms and conditions
  #. Select the “Purchase” button
 
-   |image102|
+    |image102|
+    
  #. This will take about 15 minutes –
+ 
     - You can monitor deployment on the azure dashboard by opening the Notifications in the azure portal
 
-   |image103|
+    |image103|
 
  #. Continue with the Lab. The deployment will complete by the time the BIG-IP configuration is required
 
