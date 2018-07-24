@@ -6,58 +6,58 @@ In this lab we will modify the existing Ansible playbook to create an HA environ
 
 This lab assumes that you have completed LAB 2 which includes build and run the docker container and creating the credential vault. 
 
-#. Return to the Terminal window
+ #. Return to the Terminal window
 
-   - Prompt is now /home/ansible/azure-f5
-   - **Troubleshooting tip** If you closed the terminal window restart the container with the 2 steps below
-   - sudo docker ps -a (this will allow you to see the CONTAINER ID)
-   - sudo docker exec -i  -t <CONTAINER ID> /bin/sh 
+    - Prompt is now /home/ansible/azure-f5
+    - **Troubleshooting tip** If you closed the terminal window restart the container with the 2 steps below
+    - sudo docker ps -a (this will allow you to see the CONTAINER ID)
+    - sudo docker exec -i  -t <CONTAINER ID> /bin/sh 
 
-#. Edit group_vars/azure-f5.yml file to enable deployment of A/P BIG-IP cluster.
+ #. Edit group_vars/azure-f5.yml file to enable deployment of A/P BIG-IP cluster.
 
-   - Change the following variables
-   +----------------+------------------+-------------------+
-   | Variable       | Existing Value   + New Value         |
-   +================+==================+===================+
-   | deployment     | 2nic             | ha                |
-   +----------------+------------------+-------------------+
-   | extVipAddr1    | 10.10.10.246     | 10.10.1010        |
-   +----------------+------------------+-------------------+
+    - Change the following variables
+    +----------------+------------------+-------------------+
+    | Variable       | Existing Value   + New Value         |
+    +================+==================+===================+
+    | deployment     | 2nic             | ha                |
+    +----------------+------------------+-------------------+
+    | extVipAddr1    | 10.10.10.246     | 10.10.1010        |
+    +----------------+------------------+-------------------+
 
-#. Let’s take a look at the Ansible Playbooks used to create the objects (BIG-IP, BIG-IP configuration, and Linux servers) instead of running the 2nic playbook, this deployment will run the bigip_ha playbook.
+ #. Let’s take a look at the Ansible Playbooks used to create the objects (BIG-IP, BIG-IP configuration, and Linux servers) instead of running the 2nic playbook, this deployment will run the bigip_ha playbook.
 
-   - View the variable assignments in the group_vars/azure-f5.yml
-   - cat group_vars/azure-f5.yml
-   - View the f5agility.yml file. This is the Ansible code which controls the execution of the individual playbooks. Playbooks are referred to as roles in this file. 
-   - cat f5agility.yml | more
-   - View the directories where the playbooks are stored
-   - ls
-   - Inspect a one or more of the playbooks
-   - cd bigip_ha/tasks
-   - cat main.yml | more
-   - cd /home/ansible/azure-f5
+    - View the variable assignments in the group_vars/azure-f5.yml
+    - cat group_vars/azure-f5.yml
+    - View the f5agility.yml file. This is the Ansible code which controls the execution of the individual playbooks. Playbooks are referred to as roles in this file. 
+    - cat f5agility.yml | more
+    - View the directories where the playbooks are stored
+    - ls
+    - Inspect a one or more of the playbooks
+    - cd bigip_ha/tasks
+    - cat main.yml | more
+    - cd /home/ansible/azure-f5
    
-#. Re-run the Ansible playbook to create the new deployment. A message is displayed to console with the public IP addresses for the BIG-IP management interfaces as well as the virtual server.
+ #. Re-run the Ansible playbook to create the new deployment. A message is displayed to console with the public IP addresses for the BIG-IP management interfaces as well as the virtual server.
 
-   - ansible-playbook f5agility.yml -e deploy_state=present
-   |image301|
+    - ansible-playbook f5agility.yml -e deploy_state=present
+    |image301|
 
-#. Let’s take a look at the BIG-IP configurations which were created. Access both BIG-IP’s using the information provided in the final comments following the TASK deployment. You can also access this information in the resource group objects on the Azure portal. In this exercise, the main focus will be the HA configuration. 
+ #. Let’s take a look at the BIG-IP configurations which were created. Access both BIG-IP’s using the information provided in the final comments following the TASK deployment. You can also access this information in the resource group objects on the Azure portal. In this exercise, the main focus will be the HA configuration. 
 
-   - Access BIG-IP Management interface
-   - https://<BIG-IP-MGMT-IP-ADDRESS> (Obtain this info from the ansible output or the Azure portal)
-   - Username: x-student#
-   - Password: ChangeMeNow123
-   - Determine which BIG-IP is active and perform the following on the GUI
-   - Device Management>>Devices
-   - Failover Objects (tab at top of page)
-   - Note: bodgeit_srvc_dscvry
-   - Properties
-   - Force to Standby
-   - Confirm operation by selecting Force to Standby again
+    - Access BIG-IP Management interface
+    - https://<BIG-IP-MGMT-IP-ADDRESS> (Obtain this info from the ansible output or the Azure portal)
+    - Username: x-student#
+    - Password: ChangeMeNow123
+    - Determine which BIG-IP is active and perform the following on the GUI
+    - Device Management>>Devices
+    - Failover Objects (tab at top of page)
+    - Note: bodgeit_srvc_dscvry
+    - Properties
+    - Force to Standby
+    - Confirm operation by selecting Force to Standby again
    
-   - **Note that while the HA configuration on the BIG-IP in Azure is very similar to traditional HA configurations in an on prem data center, the operation is different. In Azure, an Azure API is triggered when a failover occurs. The public IP associated with a VIP is only assigned to the external network on the active member of the HA pair. Failover time can be greater than 30 seconds when using this method**
-   |image302|
+    - **Note that while the HA configuration on the BIG-IP in Azure is very similar to traditional HA configurations in an on prem data center, the operation is different. In Azure, an Azure API is triggered when a failover occurs. The public IP associated with a VIP is only assigned to the external network on the active member of the HA pair. Failover time can be greater than 30 seconds when using this method**
+    |image302|
 
    - Inspect the service discovery iApp
    - iApps>>Application Services>>Applications
@@ -95,14 +95,14 @@ Destroy the environment and verify that the objects were deleted
 
 #. Run the ansible playbook with deploy_state=absent 
 
-   - ansible-playbook f5agility.yml -e deploy_state=absent
-   - **This step takes about 15 minutes**
-#. Access the Azure portal to verify that the objects have been deleted
+    - ansible-playbook f5agility.yml -e deploy_state=absent
+    - **This step takes about 15 minutes**
+ #. Access the Azure portal to verify that the objects have been deleted
 
-   - https://portal.azure.com 
-   - Username: x-student#@f5custlabs.onmicrosoft.com
-   - Password: ChangeMeNow123
-   - Verify that the Resource group and associated objects is removed
+    - https://portal.azure.com 
+    - Username: x-student#@f5custlabs.onmicrosoft.com
+    - Password: ChangeMeNow123
+    - Verify that the Resource group and associated objects is removed
 
 FINAL GRADE
 ~~~~~~~~~~~
