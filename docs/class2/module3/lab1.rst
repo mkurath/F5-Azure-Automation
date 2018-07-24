@@ -59,12 +59,12 @@ This lab assumes that you have completed LAB 2 which includes build and run the 
     - **Note that while the HA configuration on the BIG-IP in Azure is very similar to traditional HA configurations in an on prem data center, the operation is different. In Azure, an Azure API is triggered when a failover occurs. The public IP associated with a VIP is only assigned to the external network on the active member of the HA pair. Failover time can be greater than 30 seconds when using this method**
     |image302|
 
-   - Inspect the service discovery iApp
-   - iApps>>Application Services>>Applications
-   - Components
-   - Reconfigure
+    - Inspect the service discovery iApp
+    - iApps>>Application Services>>Applications
+    - Components
+    - Reconfigure
 
-   |image303|
+    |image303|
 
  #. Inspect the HA components in Azure
 
