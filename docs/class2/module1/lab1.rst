@@ -35,7 +35,7 @@ Accessing Ravello Jump Host and deploy BIG-IP
     - Password:  ChangeMeNow123
 
  #. Complete the Customized template with the following values **(don’t follow the screen shot)**
-
+ 
     +------------------------+---------------------+
     | Resource Group         | Select Create New   |
     +------------------------+---------------------+
@@ -76,38 +76,38 @@ Install a Linux Server in Azure
  #. Navigate to the Azure Marketplace and select Create a Resource
  #. Select Ubuntu Server 17.10 VM
 
-   |image104|
+    |image104|
 
  #. Complete the Customized template with the following values **(don’t follow the screen shot)**
 
-   +------------------------+---------------------+
-   | Name                   | F5Ubuntux-student#  |
-   +------------------------+---------------------+
-   | VM disk type           | HDD                 |
-   +------------------------+---------------------+
-   | Admin Username         | azureuser           |
-   +------------------------+---------------------+
-   | Admin Password         | ChangeMeNow123      |
-   +------------------------+---------------------+
-   | Resource Group         | Select:Use Existing |
-   +------------------------+---------------------+
-   | Resource Group         | x-student#-rg       |
-   +------------------------+---------------------+
-   | Location               | East US             |                      
-   +------------------------+---------------------+
-   |Timezone                | UTC                 |
-   +------------------------+---------------------+ 
+    +------------------------+---------------------+
+    | Name                   | F5Ubuntux-student#  |
+    +------------------------+---------------------+
+    | VM disk type           | HDD                 |
+    +------------------------+---------------------+
+    | Admin Username         | azureuser           |
+    +------------------------+---------------------+
+    | Admin Password         | ChangeMeNow123      |
+    +------------------------+---------------------+
+    | Resource Group         | Select:Use Existing |
+    +------------------------+---------------------+
+    | Resource Group         | x-student#-rg       |
+    +------------------------+---------------------+
+    | Location               | East US             |                      
+    +------------------------+---------------------+
+    |Timezone                | UTC                 |
+    +------------------------+---------------------+ 
 
  #. Select the “OK” button
 
-   |image105|
+    |image105|
    
  #. Select the machine type
 
     - Highlight B1s
     - Select Button at the bottom of the page
 
-   |image106|
+    |image106|
 
  #. Define the machine config parameters
 
@@ -116,14 +116,14 @@ Install a Linux Server in Azure
     - Select SSH in the select public inbound ports
     - Select the “OK” button
 
-   |image107|
+    |image107|
 
  #. Create the machine
  
     - Review the configuration
     - Select the “Create” button
 
-   |IMAGE108|
+    |IMAGE108|
 
 Install Apache Web Server on the Linux Server in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
