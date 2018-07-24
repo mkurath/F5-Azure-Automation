@@ -93,7 +93,7 @@ This lab assumes that you have completed LAB 2 which includes build and run the 
 Destroy the environment and verify that the objects were deleted
 ~~~~~~~~~~~
 
-#. Run the ansible playbook with deploy_state=absent 
+ #. Run the ansible playbook with deploy_state=absent 
 
     - ansible-playbook f5agility.yml -e deploy_state=absent
     - **This step takes about 15 minutes**
