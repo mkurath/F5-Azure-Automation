@@ -1,4 +1,4 @@
- 
+
 Lab 2.1: Introduction to F5 Orchestration with Ansible 
 ======================================================
 
@@ -67,6 +67,7 @@ In the following steps you will build and run a Docker container called agility2
     - Click App registration
     - Click on your app  (studentX-app)
     - Click delete
+    - rerun ./shCreate.sh and verify that all values in the Service Principal field are populated 
 
  #. Create the group_vars/all/vault.yml file with the variables in the black section and verify the contents
 
