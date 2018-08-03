@@ -19,7 +19,7 @@ Accessing Ravello Jump Host and deploy BIG-IP
 
     - Username: Ubuntu
     - Password: supernetops
-    - Open the chrome browser
+    - Open the terminal window
     - Adjust the font size using the Zoom In
     - Size the window
    
