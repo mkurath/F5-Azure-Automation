@@ -37,7 +37,6 @@ In the following steps you will build and run a Docker container called agility2
  #. Build Docker container (hint: note the period at the end of the command.  
 
     - sudo docker build -t agility2018 . **(A space is required after the period for this command to work)**
-    - **This step will take about 10 minutes**
     - Verify that the agility2018 container exists and look at the other docker containers currently on the system
     - sudo docker images
     - Run the Docker container
