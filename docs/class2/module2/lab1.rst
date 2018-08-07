@@ -90,7 +90,7 @@ In the following steps you will build and run a Docker container called agility2
 
  #. Run Ansible playbook with deploy_state=present to create deployment
 
-    - ansible-playbook f5agility.yml -e deploy_state=present
+    - ansible-playbook -i notahost, f5agility.yml -e deploy_state=present
     - **This step will take about 20 minutes**
     - Once complete review the comments on the screen. 
      - Note the URI for BIG-IP management
