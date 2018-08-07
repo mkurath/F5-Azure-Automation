@@ -39,7 +39,7 @@ This lab assumes that you have completed LAB 2 which includes build and run the 
    
  #. Re-run the Ansible playbook to create the new deployment. A message is displayed to console with the public IP addresses for the BIG-IP management interfaces as well as the virtual server.
 
-    - ansible-playbook f5agility.yml -e deploy_state=present
+    - ansible-playbook -i notahost, f5agility.yml -e deploy_state=present
     |image301|
 
  #. Let’s take a look at the BIG-IP configurations which were created. Access both BIG-IP’s using the information provided in the final comments following the TASK deployment. You can also access this information in the resource group objects on the Azure portal. In this exercise, the main focus will be the HA configuration. 
