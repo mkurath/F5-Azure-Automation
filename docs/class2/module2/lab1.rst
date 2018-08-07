@@ -27,14 +27,14 @@ Build and run a docker container with ansible playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In the following steps you will build and run a Docker container called agility2018 which will have Ansible installed. From the Docker container, you will provide the required configuration and authentication credentials to deploy an application into the Azure environment in a fully automated way. 
 
- #. Clone the github repository to the Linux Host
+ #. Clone the github repository to the Linux Host **(Optional for Agility lab)**
 
     - git clone https://github.com/ajgerace/azure-f5 
     - View the contents of the directory. Note the addition of a subdirectory called 
     - ls 
     - Change directory to the azure-f5
     - cd azure-f5
- #. Build Docker container (hint: note the period at the end of the command.  
+ #. Build Docker container (hint: note the period at the end of the command. **(Optional for Agility lab)**
 
     - sudo docker build -t agility2018 . **(A space is required after the period for this command to work)**
     - Verify that the agility2018 container exists and look at the other docker containers currently on the system
