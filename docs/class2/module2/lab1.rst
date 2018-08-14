@@ -39,7 +39,7 @@ In the following steps you will build and run a Docker container called agility2
     - sudo docker build -t agility2018 . **(A space is required after the period for this command to work)**
     - Verify that the agility2018 container exists and look at the other docker containers currently on the system
     - sudo docker images
-    - Run the Docker container
+ #. Run the Docker container
     - `sudo docker run -it --rm agility2018`  **(there are 2 hyphens before the rm part of this command)**
     - Note the change at the prompt. You are now working inside the Docker container
     - Prompt is now /home/ansible
