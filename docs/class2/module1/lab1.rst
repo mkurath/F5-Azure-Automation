@@ -81,7 +81,7 @@ Install a Linux Server in Azure
  #. Complete the Customized template with the following values **(don’t follow the screen shot)**
 
     +------------------------+---------------------+
-    | Name                   | F5Ubuntux-student#  |
+    | Name                   | F5Ubuntu-student#  |
     +------------------------+---------------------+
     | VM disk type           | HDD                 |
     +------------------------+---------------------+
