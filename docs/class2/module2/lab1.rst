@@ -213,9 +213,9 @@ Add a VIP to the existing Application environment
      - Password: ChangeMeNow123
      - Inspect the external network interface in Azure
      - Resource Groups
-     - Select your Resource Group  <x-student#_rg>
+     - Select your Resource Group  <student#_rg>
      - Inspect the BIG-IP virtual machine Network Interface object
-     - x-student#-ext
+     - student#-ext
      - IP Configurations from the tool list on the left of the screen
      - Note the Public IP associated with 10.0.10.247
 
